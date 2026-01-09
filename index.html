@@ -1,47 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ذاكر - مساعدك الذكي للمذاكرة</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Cairo', sans-serif;
-      }
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 6px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background: transparent;
-      }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #cbd5e1;
-        border-radius: 10px;
-      }
-      .dark .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: #334155;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+<head>
+  <meta charset="UTF-8">
+  <title>ذاكر - مساعدك الذكي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+    }
+  </style>
 </head>
-  <body class="bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-black dark:text-slate-100">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body class="bg-slate-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white w-full max-w-md p-4 rounded-xl shadow">
+    <h1 class="text-xl font-bold mb-3 text-center">ذاكر 🤖</h1>
+
+    <textarea
+      id="question"
+      class="w-full border rounded p-2 mb-3"
+      rows="4"
+      placeholder="اسأل أي سؤال دراسي..."
+    ></textarea>
+
+    <button
+      onclick="askAI()"
+      class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+    >
+      اسأل
+    </button>
+
+    <div
+      id="answer"
+      class="mt-4 text-sm whitespace-pre-wrap"
+    ></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
